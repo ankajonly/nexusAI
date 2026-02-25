@@ -1,0 +1,49 @@
+/* App wrapper */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+}
+
+.app main {
+  flex: 1;
+}
+
+/* Global Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive Padding */
+@media (max-width: 768px) {
+  .app {
+    padding-top: 70px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding-top: 60px;
+  }
+  
+  .container {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .app {
+    padding-top: 50px;
+  }
+
+  .container {
+    padding: 0 8px;
+  }
+}

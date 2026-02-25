@@ -1,0 +1,142 @@
+{
+  "info": {
+    "name": "React App API",
+    "description": "Complete API for React App with Authentication",
+    "version": "1.0.0"
+  },
+  "auth": {
+    "type": "Bearer Token",
+    "description": "JWT Token required for protected routes"
+  },
+  "baseUrl": "http://localhost:5000/api",
+  "routes": {
+    "auth": {
+      "signup": {
+        "method": "POST",
+        "path": "/auth/signup",
+        "description": "Register a new user",
+        "body": {
+          "firstName": "string (required)",
+          "lastName": "string (required)",
+          "email": "string (required, valid email)",
+          "password": "string (required, min 6 chars)"
+        },
+        "response": {
+          "message": "Account created successfully",
+          "token": "JWT token",
+          "user": {
+            "id": "user id",
+            "firstName": "string",
+            "lastName": "string",
+            "email": "string"
+          }
+        }
+      },
+      "login": {
+        "method": "POST",
+        "path": "/auth/login",
+        "description": "Login user",
+        "body": {
+          "email": "string (required)",
+          "password": "string (required)"
+        },
+        "response": {
+          "message": "Login successful",
+          "token": "JWT token",
+          "user": {
+            "id": "user id",
+            "firstName": "string",
+            "lastName": "string",
+            "email": "string"
+          }
+        }
+      },
+      "getMe": {
+        "method": "GET",
+        "path": "/auth/me",
+        "description": "Get current authenticated user",
+        "auth": true,
+        "response": {
+          "_id": "user id",
+          "firstName": "string",
+          "lastName": "string",
+          "email": "string",
+          "phone": "string or null",
+          "bio": "string or null"
+        }
+      },
+      "logout": {
+        "method": "POST",
+        "path": "/auth/logout",
+        "description": "Logout user (frontend should delete token)",
+        "auth": true,
+        "response": {
+          "message": "Logout successful"
+        }
+      }
+    },
+    "user": {
+      "getProfile": {
+        "method": "GET",
+        "path": "/user/profile",
+        "description": "Get user profile",
+        "auth": true,
+        "response": {
+          "_id": "user id",
+          "firstName": "string",
+          "lastName": "string",
+          "email": "string",
+          "phone": "string or null",
+          "bio": "string or null",
+          "profileImage": "string or null",
+          "isVerified": "boolean",
+          "createdAt": "date",
+          "updatedAt": "date"
+        }
+      },
+      "updateProfile": {
+        "method": "PUT",
+        "path": "/user/profile",
+        "description": "Update user profile",
+        "auth": true,
+        "body": {
+          "firstName": "string (optional)",
+          "lastName": "string (optional)",
+          "email": "string (optional)",
+          "phone": "string (optional)",
+          "bio": "string (optional)"
+        },
+        "response": {
+          "message": "Profile updated successfully",
+          "user": {}
+        }
+      },
+      "changePassword": {
+        "method": "POST",
+        "path": "/user/change-password",
+        "description": "Change user password",
+        "auth": true,
+        "body": {
+          "currentPassword": "string (required)",
+          "newPassword": "string (required, min 6 chars)",
+          "confirmPassword": "string (required)"
+        },
+        "response": {
+          "message": "Password changed successfully"
+        }
+      },
+      "deleteAccount": {
+        "method": "DELETE",
+        "path": "/user/account",
+        "description": "Delete user account",
+        "auth": true,
+        "body": {
+          "password": "string (required)"
+        },
+        "response": {
+          "message": "Account deleted successfully"
+        }
+      }
+    }
+  }
+}

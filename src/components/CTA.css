@@ -1,0 +1,233 @@
+/* ===== CTA SECTION ===== */
+.cta {
+    position: relative;
+    background: var(--gray-950);
+}
+
+.cta__card {
+    position: relative;
+    padding: 80px 60px;
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    overflow: hidden;
+}
+
+.cta__bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.cta__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+}
+
+.cta__orb--1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary-600);
+    top: -30%;
+    left: -10%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.cta__orb--2 {
+    width: 350px;
+    height: 350px;
+    background: var(--accent-500);
+    bottom: -30%;
+    right: -10%;
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+.cta__content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    line-height: 1.2;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.cta__desc {
+    font-size: 1.1rem;
+    color: var(--gray-400);
+    max-width: 560px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+}
+
+.cta__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.cta__btn-primary {
+    background: white;
+    color: var(--gray-900);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+}
+
+.cta__btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+}
+
+.cta__note {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+}
+
+@media (max-width: 1024px) {
+    .cta__card {
+        padding: 70px 50px;
+    }
+
+    .cta__title {
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    }
+
+    .cta__desc {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta {
+        padding: 60px 0;
+    }
+
+    .cta__card {
+        padding: 50px 35px;
+    }
+
+    .cta__title {
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        margin-bottom: 16px;
+    }
+
+    .cta__desc {
+        font-size: 0.95rem;
+        margin-bottom: 28px;
+    }
+
+    .cta__buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .cta__btn-primary,
+    .cta__btn-secondary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .cta {
+        padding: 40px 0;
+    }
+
+    .cta__card {
+        padding: 40px 24px;
+        border-radius: var(--radius-lg);
+    }
+
+    .cta__title {
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    }
+
+    .cta__desc {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+    }
+
+    .cta__buttons {
+        gap: 10px;
+    }
+
+    .cta__note {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta {
+        padding: 30px 0;
+    }
+
+    .cta__card {
+        padding: 30px 16px;
+    }
+
+    .cta__title {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .cta__desc {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+
+    .cta__buttons {
+        gap: 8px;
+    }
+
+    .cta__btn-primary,
+    .cta__btn-secondary {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .cta__orb--1 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .cta__orb--2 {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 360px) {
+    .cta {
+        padding: 20px 0;
+    }
+
+    .cta__card {
+        padding: 24px 12px;
+    }
+
+    .cta__title {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .cta__desc {
+        font-size: 0.8rem;
+    }
+
+    .cta__buttons {
+        gap: 6px;
+    }
+
+    .cta__btn-primary,
+    .cta__btn-secondary {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+}
