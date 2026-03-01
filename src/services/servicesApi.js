@@ -1,5 +1,4 @@
-// Services API calls
-const API_URL = 'http://localhost:5000/api';
+import API_URL from '../utils/apiConfig';
 
 export const getServices = async () => {
     try {
@@ -48,7 +47,7 @@ export const getServiceById = async (id) => {
 export const contactService = async (contactData) => {
     try {
         const token = localStorage.getItem('token');
-        
+
         const response = await fetch(`${API_URL}/services/contact`, {
             method: 'POST',
             headers: {

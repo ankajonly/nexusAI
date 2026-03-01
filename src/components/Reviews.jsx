@@ -3,9 +3,9 @@ import './Reviews.css';
 
 const reviewsData = [
     {
-        name: 'Sarah Chen',
+        name: 'Ankit Yadav',
         role: 'CEO, TechVentures',
-        avatar: 'SC',
+        avatar: 'AY',
         color: '#6366f1',
         rating: 5,
         text: 'NexusUI transformed our entire digital presence. The attention to detail and performance optimization exceeded all expectations. Our conversion rates jumped 40% within the first month.',

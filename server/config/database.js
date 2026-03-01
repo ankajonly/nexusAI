@@ -16,7 +16,8 @@ export const connectDB = async () => {
         process.env.DB_MODE = 'standard';
         return true;
     } catch (standardErr) {
-        console.warn('⚠️ Could not connect to Standard MongoDB. Switching to In-Memory mode...', standardErr.message);
+        console.error('❌ Standard MongoDB Connection Error:', standardErr);
+        console.warn('⚠️ Switching to In-Memory mode...');
 
         try {
             mongoServer = await MongoMemoryServer.create();

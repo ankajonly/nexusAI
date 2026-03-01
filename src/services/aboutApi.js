@@ -1,8 +1,8 @@
-const API_BASE_URL = 'http://localhost:5000/api';
+import API_URL from '../utils/apiConfig';
 
 export const getAbout = async () => {
     try {
-        const response = await fetch(`${API_BASE_URL}/about`);
+        const response = await fetch(`${API_URL}/about`);
         if (!response.ok) throw new Error('Failed to fetch about');
         return await response.json();
     } catch (error) {

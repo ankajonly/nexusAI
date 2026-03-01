@@ -1,8 +1,8 @@
-const API_BASE_URL = 'http://localhost:5000/api';
+import API_URL from '../utils/apiConfig';
 
 export const getReviews = async () => {
     try {
-        const response = await fetch(`${API_BASE_URL}/reviews`);
+        const response = await fetch(`${API_URL}/reviews`);
         if (!response.ok) throw new Error('Failed to fetch reviews');
         return await response.json();
     } catch (error) {
@@ -24,7 +24,7 @@ export const getReviewById = async (id) => {
 
 export const addReview = async (reviewData) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/reviews`, {
+        const response = await fetch(`${API_URL}/reviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

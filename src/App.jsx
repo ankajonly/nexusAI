@@ -15,6 +15,8 @@ import Signup from './components/Signup';
 import AboutPage from './pages/AboutPage';
 import ReviewsPage from './pages/ReviewsPage';
 import ServicesPage from './pages/ServicesPage';
+import Chatbot from './components/Chatbot';
+
 
 function HomePage() {
   return (
@@ -81,7 +83,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
           </Routes>
+          <Chatbot />
         </div>
+
       </Router>
     </AuthProvider>
   );
